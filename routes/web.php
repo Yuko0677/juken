@@ -13,13 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
+Route::get('/', 'HomeController@home');
 Route::get('/homework', 'HomeworkController@index');
 Route::get('/standardscore', 'StandardscoreController@index');
 Route::get('/memo', 'MemoController@index');
+Route::get('/targetschool', 'TargetschoolController@index');
 Route::get('/admin/targetschool/create', 'TargetschoolController@index');
 Route::get('/admin/homework/create', 'HomeworkController@add');
 Route::post('/admin/homework/create', 'HomeworkController@create');
