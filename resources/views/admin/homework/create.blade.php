@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-md-8 mx-auto">
       <h2>宿題の新規作成</h2>
-      <form action="{{ action('HomeworkController@create') }}" method="post" enctype="multipart/form-data">
+      <form action="{{ action('Admin\HomeworkController@create') }}" method="post" enctype="multipart/form-data">
 
         @if (count($errors) > 0)
         <ul>

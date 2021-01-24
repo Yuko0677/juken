@@ -13,15 +13,43 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+  return view('welcome');
+});
+
 Route::get('/', 'HomeController@home');
 Route::get('/homework', 'HomeworkController@index');
 Route::get('/standardscore', 'StandardscoreController@index');
 Route::get('/memo', 'MemoController@index');
 Route::get('/targetschool', 'TargetschoolController@index');
-Route::get('/admin/targetschool/create', 'TargetschoolController@index');
-Route::get('/admin/homework/create', 'HomeworkController@add');
-Route::post('/admin/homework/create', 'HomeworkController@create');
-Route::get('/admin/homework/edit', 'HomeworkController@edit');
-Route::post('/admin/homework/edit', 'HomeworkController@update');
-Route::get('/admin/homework', 'HomeworkController@index');
-Route::post('/admin/homework/delete', 'HomeworkController@delete');
+Route::get('admin/', 'Admin\HomeController@home');
+
+Route::group(['prefix' => 'admin'], function () {
+  Route::get('homework/create', 'Admin\HomeworkController@add');
+  Route::post('homework/create', 'Admin\HomeworkController@create');
+  Route::get('homework/edit', 'Admin\HomeworkController@edit');
+  Route::post('homework/edit', 'Admin\HomeworkController@update');
+  Route::get('homework/', 'Admin\HomeworkController@index');
+  Route::post('homework/delete', 'Admin\HomeworkController@delete');
+
+  Route::get('targetschool/create', 'Admin\TargetschoolController@add');
+  Route::post('targetschool/create', 'Admin\TargetschoolController@create');
+  Route::get('/etargetschooldit', 'Admin\TargetschoolController@edit');
+  Route::post('targetschool/edit', 'Admin\TargetschoolController@update');
+  Route::get('targetschool/', 'Admin\TargetschoolController@index');
+  Route::post('targetschool/delete', 'Admin\TargetschoolController@delete');
+
+  Route::get('standardscore/create', 'Admin\StandardscoreController@add');
+  Route::post('standardscore/create', 'Admin\StandardscoreController@create');
+  Route::get('standardscore/edit', 'Admin\StandardscoreController@edit');
+  Route::post('standardscore/edit', 'Admin\StandardscoreController@update');
+  Route::get('standardscore/', 'Admin\StandardscoreController@index');
+  Route::post('standardscore/delete', 'Admin\StandardscoreController@delete');
+
+  Route::get('memo/create', 'Admin\MemoController@add');
+  Route::post('memo/create', 'Admin\MemoController@create');
+  Route::get('memo/edit', 'Admin\MemoController@edit');
+  Route::post('memo/edit', 'Admin\MemoController@update');
+  Route::get('memo/', 'Admin\MemoController@index');
+  Route::post('memo/delete', 'Admin\MemoController@delete');
+});
