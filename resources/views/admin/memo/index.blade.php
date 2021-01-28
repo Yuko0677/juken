@@ -4,10 +4,7 @@
 @section('content')
 <div class="container">
   <div class="row">
-    <h2>メモ一覧</h2>
-    <div class="col-md-12">
-      <a href="..\" , role="button" class="btn btn-primary"> メモ画面</a>
-    </div>
+    <h2>記録メモ一覧</h2>
   </div>
   <div class="row">
     <div class="col-md-4">
@@ -16,7 +13,7 @@
     <div class="col-md-8">
       <form action="{{ action('Admin\MemoController@index') }}" method="get">
         <div class="form-group row">
-          <label class="col-md-2">タイトル</label>
+          <label class="col-md-2">キーワード</label>
           <div class="col-md-8">
             <input type="text" class="form-control" name="cond_title" value="">
           </div>
@@ -35,7 +32,7 @@
           <thead>
             <tr>
               <th width="10%">日付</th>
-              <th width="20%">メモ</th>
+              <th width="20%">項目</th>
               <th width="50%">内容</th>
               <th width="10%">操作</th>
             </tr>

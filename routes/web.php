@@ -53,3 +53,7 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('memo/', 'Admin\MemoController@index');
   Route::post('memo/delete', 'Admin\MemoController@delete');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

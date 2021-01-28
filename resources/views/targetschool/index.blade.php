@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.user')
+@section('title', '志望校一覧')
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Target School</title>
-</head>
+@section('content')
+<div class="container">
 
-<body>
   <header>
     <ul>
       <li><a href="http://"></a>第1志望：</li>
@@ -18,6 +14,3 @@
       <li><a href="http://"></a>第6志望：</li>
     </ul>
   </header>
-</body>
-
-</html>

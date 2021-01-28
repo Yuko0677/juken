@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.user')
+@section('title', '記録一覧')
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>memo</title>
-</head>
+@section('content')
+<div class="container">
 
-<body>
-  <div>
-    <h3>記録</h3>
+  <div class="container">
+    <div class="row">
+      <h2>記録一覧</h2>
+    </div>
   </div>
-  <div></div>
-</body>
-
-</html>

@@ -8,17 +8,26 @@
   </div>
 </div>
 <div class="item">
-  <p1>宿題</p1>
+  <p1>
+    <a href="homework\">宿題</a>
+  </p1>
 </div>
 <div class="item">
-  <p1>テスト偏差値</p1>
+  <p1>
+    <a href="standardscore\">テスト偏差値</a>
+  </p1>
 </div>
 <div class="item">
-  <p1>志望校リスト</p1>
+  <p1>
+    <a href="targetschool\">志望校リスト</a>
+  </p1>
 </div>
 <div class="item">
-  <p1>記録メモ</p1>
+  <p1>
+    <a href="memo\">記録メモ</a>
+  </p1>
 </div>
+
 <div class="item">
   <p1>カレンダー</p1>
 </div>
