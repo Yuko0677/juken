@@ -11,7 +11,7 @@ class TargetschoolController extends Controller
     {
         return view('admin.targetschool.index');
     }
-    public function add()
+    public function add(Request $request)
     {
         return view('admin.targetschool.create');
     }
