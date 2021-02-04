@@ -24,7 +24,8 @@ Route::get('/memo', 'MemoController@index');
 Route::get('/targetschool', 'TargetschoolController@index');
 Route::get('admin/', 'Admin\HomeController@home');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+//, 'middleware' => 'auth'
+Route::group(['prefix' => 'admin'], function () {
   Route::get('homework/create', 'Admin\HomeworkController@add');
   Route::post('homework/create', 'Admin\HomeworkController@create');
   Route::get('homework/edit', 'Admin\HomeworkController@edit');
@@ -33,7 +34,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
   Route::post('homework/delete', 'Admin\HomeworkController@delete');
 
   Route::get('targetschool/create', 'Admin\TargetschoolController@add');
-  Route::get('targetschool/create', 'Admin\TargetschoolController@create');
+  Route::post('targetschool/create', 'Admin\TargetschoolController@create');
   Route::get('targetschool/edit', 'Admin\TargetschoolController@edit');
   Route::post('targetschool/edit', 'Admin\TargetschoolController@update');
   Route::get('targetschool/', 'Admin\TargetschoolController@index');
@@ -56,4 +57,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 Auth::routes();
 
-Route::get('/front', 'FrontController@front')->name('front');
+Route::get('/', 'FrontController@front')->name('front');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

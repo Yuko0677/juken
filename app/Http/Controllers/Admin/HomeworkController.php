@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Homework;
 
 class HomeworkController extends Controller
 {
@@ -17,7 +18,12 @@ class HomeworkController extends Controller
     }
     public function create(Request $request)
     {
-        return redirect('admin/homework');
+
+        //以下を追記
+        //Validationを行う
+
+
+        return redirect('admin/homework/create');
     }
     public function edit(Request $request)
     {

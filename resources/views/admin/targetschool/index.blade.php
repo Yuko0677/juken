@@ -11,16 +11,17 @@
       <a href="{{ action('Admin\TargetschoolController@add') }}" role="button" class="btn btn-primary"> 新規作成</a>
     </div>
     <div class="col-md-8">
-      <div class="form-group row">
-        <label class="col-md-2">学校名</label>
-        <div class="col-md-8">
-          <input type="text" class="form-control" name="cond_title" value="">
+      <form action="{{ action('Admin\TargetschoolController@index') }}" method="get">
+        <div class="form-group row">
+          <label class="col-md-2">学校名</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" name="cond_title" value="">
+          </div>
+          <div class="col-md-2">
+            {{ csrf_field() }}
+            <input type="submit" class="btn btn-primary" value="検索">
+          </div>
         </div>
-        <div class="col-md-2">
-          {{ csrf_field() }}
-          <input type="submit" class="btn btn-primary" value="検索">
-        </div>
-      </div>
       </form>
     </div>
   </div>
