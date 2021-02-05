@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="admin-memo col-md-12 mx-auto">
+    <div class="list-homework col-md-12 mx-auto">
       <div class="row">
         <table class="table table-dark">
           <thead>
@@ -39,17 +39,18 @@
           </thead>
           <tbody>
             @if(isset($posts))
-            @foreach($posts as $memo)
+            @foreach($posts as $homework)
             <tr>
-              <th>{{ $memo->id }}</th>
-              <td>{{ \Str::limit($memo->title, 100) }}</td>
-              <td>{{ \Str::limit($memo->body, 250) }}</td>
+              <th>{{ $homework->id }}</th>
+              <td>{{ \Str::limit($homework->date, 100) }}</td>
+              <td>{{ \Str::limit($homework->subject, 50) }}</td>
+              <td>{{ \Str::limit($homework->body, 250) }}</td>
               <td>
                 <div>
-                  <a href="{{ action('Admin\HomeworkController@edit', ['id' => $memo->id]) }}">編集</a>
+                  <a href="{{ action('Admin\HomeworkController@edit', ['id' => $homework->id]) }}">編集</a>
                 </div>
                 <div>
-                  <a href="{{ action('Admin\HomeworkController@delete', ['id' => $memo->id]) }}">削除</a>
+                  <a href="{{ action('Admin\HomeworkController@delete', ['id' => $homework->id]) }}">削除</a>
                 </div>
               </td>
             </tr>

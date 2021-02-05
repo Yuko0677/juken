@@ -32,5 +32,11 @@ class HomeworkController extends Controller
     public function update(Request $request)
     {
         return redirect('admin/homework');
+    }
+    public function delete(Request $request)
+    {
+        $homework = Homework::find($request->id);
+        $homework->delete();
+        return redirect('admin/homework/');
     }   //
 }

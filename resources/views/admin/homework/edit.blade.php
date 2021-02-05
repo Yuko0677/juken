@@ -1,8 +1,7 @@
 @extends('layouts.admin')
 @section('title', '宿題の編集')
 
-// test
-// ome more test
+
 @section('content')
 <div class="container">
   <div class="row">
@@ -17,9 +16,15 @@
         </ul>
         @endif
         <div class="form-group row">
-          <label class="col-md-2" for="title">項目</label>
+          <label class="col-md-2" for="date">日付</label>
           <div class="col-md-10">
-            <input type="text" class="form-control" name="title" value="{{ $homework_form->title }}">
+            <input type="text" class="form-control" name="date" value="{{ $homework_form->date }}">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-2" for="subject">科目</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" name="subject" value="{{ $homework_form->subject }}">
           </div>
         </div>
         <div class="form-group row">
