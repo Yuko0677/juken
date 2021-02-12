@@ -10,7 +10,9 @@ class HomeworkController extends Controller
 {
     public function index(Request $request)
     {
-        return view('admin.homework.index');
+        $homeworks = Homework::get();
+        $data = ['homeworks' => $homeworks];
+        return view('admin.homework.index', $data);
     }
     public function add()
     {
@@ -18,19 +20,18 @@ class HomeworkController extends Controller
     }
     public function create(Request $request)
     {
-
-        //以下を追記
-        //Validationを行う
-
-
+        Homework::create($request->all());
         return redirect('admin/homework/create');
     }
     public function edit(Request $request)
     {
-        return view('admin.homework.edit');
+        $homework = Homework::find($request->id);
+        $data = ['homework' => $homework];
+        return view('admin.homework.edit', $data);
     }
     public function update(Request $request)
     {
+        Homework::find($request->id)->update($request->all());
         return redirect('admin/homework');
     }
     public function delete(Request $request)

@@ -18,24 +18,24 @@
         <div class="form-group row">
           <label class="col-md-2" for="date">日付</label>
           <div class="col-md-10">
-            <input type="text" class="form-control" name="date" value="{{ $homework_form->date }}">
+            <input type="text" class="form-control" name="limit_at" value="{{ $homework->limit_at }}">
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-2" for="subject">科目</label>
           <div class="col-md-10">
-            <input type="text" class="form-control" name="subject" value="{{ $homework_form->subject }}">
+            <input type="text" class="form-control" name="subject" value="{{ $homework->subject }}">
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-2" for="body">内容</label>
           <div class="col-md-10">
-            <textarea class="form-control" name="body" rows="20">{{ $homeowrk_form->body }}</textarea>
+            <textarea class="form-control" name="body" rows="20">{{ $homework->body }}</textarea>
           </div>
         </div>
         <div class="form-group row">
           <div class="col-md-10">
-            <input type="hidden" name="id" value="{{ $homework_form->id }}">
+            <input type="hidden" name="id" value="{{ $homework->id }}">
             {{ csrf_field() }}
             <input type="submit" class="btn btn-primary" value="更新">
           </div>

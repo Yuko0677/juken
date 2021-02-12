@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-md-8 mx-auto">
       <h2>志望校の新規作成</h2>
-      <form action="{{ action('Admin\TargetschoolController@create') }}" method="post" enctype="multipart/form-data">
+      <form action="{{ action('Admin\TargetSchoolController@create') }}" method="post" enctype="multipart/form-data">
 
         @if (count($errors) > 0)
         <ul>
@@ -20,21 +20,33 @@
         </ul>
         @endif
         <div class="form-group row">
-          <label class="col-md-2">タイトル</label>
+          <label class="col-md-2" for="ranking">志望順</label>
           <div class="col-md-10">
-            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+            <input type="text" class="form-control" name="ranking" value="{{ old('ranking') }}">
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-md-2">本文</label>
+          <label class="col-md-2" for="name">学校名</label>
           <div class="col-md-10">
-            <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
+            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-md-2">画面</label>
+          <label class="col-md-2" for="standardscore">偏差値</label>
           <div class="col-md-10">
-            <input type="file" class="form-control-file" name="image">
+            <input type="text" class="form-control" name="standardscore" value="{{ old('standardscore') }}">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-2" for="access">アクセス</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" name="access" value="{{ old('access') }}">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-2" for="point">特徴</label>
+          <div class="col-md-10">
+            <textarea class="form-control" name="point" rows="20">{{ old('point') }}</textarea>
           </div>
         </div>
         {{ csrf_field() }}

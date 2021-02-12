@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Homework extends Model
+class Subjects extends Model
 {
-    protected $table = 'homeworks';
+    protected $table = 'subjects';
     protected $guarded = array('id');
 
     //
     public static $rules = array(
-        'date' => 'required',
-        'body' => 'required',
+        'name' => 'required',
+        'name' => 'required',
     );
 }

@@ -8,10 +8,10 @@
   </div>
   <div class="row">
     <div class="col-md-4">
-      <a href="{{ action('Admin\TargetschoolController@add') }}" role="button" class="btn btn-primary"> 新規作成</a>
+      <a href="{{ action('Admin\TargetSchoolController@add') }}" role="button" class="btn btn-primary"> 新規作成</a>
     </div>
     <div class="col-md-8">
-      <form action="{{ action('Admin\TargetschoolController@index') }}" method="get">
+      <form action="{{ action('Admin\TargetSchoolController@index') }}" method="get">
         <div class="form-group row">
           <label class="col-md-2">学校名</label>
           <div class="col-md-8">
@@ -26,31 +26,34 @@
     </div>
   </div>
   <div class="row">
-    <div class="admin-memo col-md-12 mx-auto">
+    <div class="list-targetschool col-md-12 mx-auto">
       <div class="row">
         <table class="table table-dark">
           <thead>
             <tr>
               <th width="10%">志望順位</th>
               <th width="20%">学校名</th>
+              <th width="10%">偏差値</th>
               <th width="20%">アクセス</th>
-              <th width="30%">特記事項</th>
+              <th width="20%">特記事項</th>
               <th width="10%">操作</th>
             </tr>
           </thead>
           <tbody>
-            @if(isset($posts))
-            @foreach($posts as $memo)
+            @if(isset($targetschools))
+            @foreach($targetschools as $targetschool)
             <tr>
-              <th>{{ $memo->id }}</th>
-              <td>{{ \Str::limit($memo->title, 100) }}</td>
-              <td>{{ \Str::limit($memo->body, 250) }}</td>
+              <td>{{ $targetschool->ranking }}</th>
+              <td>{{ $targetschool->name }}</td>
+              <td>{{ $targetschool->standardscore }}</td>
+              <td>{{ $targetschool->access }}</td>
+              <td>{{ \Str::limit($targetschool->point, 250) }}</td>
               <td>
                 <div>
-                  <a href="{{ action('Admin\TargetschoolController@edit', ['id' => $memo->id]) }}">編集</a>
+                  <a href="{{ action('Admin\TargetSchoolController@edit', ['id' => $targetschool->id]) }}">編集</a>
                 </div>
                 <div>
-                  <a href="{{ action('Admin\TargetschoolController@delete', ['id' => $memo->id]) }}">削除</a>
+                  <a href="{{ action('Admin\TargetSchoolController@delete', ['id' => $targetschool->id]) }}">削除</a>
                 </div>
               </td>
             </tr>

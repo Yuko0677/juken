@@ -28,7 +28,11 @@
     <a href="memo\">記録メモ</a>
   </p1>
 </div>
-
+<div class="item">
+  <p1>
+    <a href="subject\">科目</a>
+  </p1>
+</div>
 <div class="item">
   <p1>カレンダー</p1>
 </div>

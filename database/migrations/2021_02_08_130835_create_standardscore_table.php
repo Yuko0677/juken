@@ -3,8 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Admin\Standardscore;
 
-class CreateSubjectTable extends Migration
+class CreateStandardscoreTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +14,13 @@ class CreateSubjectTable extends Migration
      */
     public function up()
     {
-        Schema::create('subject', function (Blueprint $table) {
+        Schema::create('standardscore', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('subject'); // 教科のタイトルを保存するカラム
+            $table->string('ranking');
+            $table->string('name');
+            $table->string('standardscore');
+            $table->string('access')->nullable();
+            $table->string('point')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +32,6 @@ class CreateSubjectTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subject');
+        Schema::dropIfExists('standardscore');
     }
 }

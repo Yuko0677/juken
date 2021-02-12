@@ -33,12 +33,12 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('homework/', 'Admin\HomeworkController@index');
   Route::post('homework/delete', 'Admin\HomeworkController@delete');
 
-  Route::get('targetschool/create', 'Admin\TargetschoolController@add');
-  Route::post('targetschool/create', 'Admin\TargetschoolController@create');
-  Route::get('targetschool/edit', 'Admin\TargetschoolController@edit');
-  Route::post('targetschool/edit', 'Admin\TargetschoolController@update');
-  Route::get('targetschool/', 'Admin\TargetschoolController@index');
-  Route::post('targetschool/delete', 'Admin\TargetschoolController@delete');
+  Route::get('targetschool/create', 'Admin\TargetSchoolController@add');
+  Route::post('targetschool/create', 'Admin\TargetSchoolController@create');
+  Route::get('targetschool/edit', 'Admin\TargetSchoolController@edit');
+  Route::post('targetschool/edit', 'Admin\TargetSchoolController@update');
+  Route::get('targetschool/', 'Admin\TargetSchoolController@index');
+  Route::post('targetschool/delete', 'Admin\TargetSchoolController@delete');
 
   Route::get('standardscore/create', 'Admin\StandardscoreController@add');
   Route::post('standardscore/create', 'Admin\StandardscoreController@create');
@@ -53,6 +53,13 @@ Route::group(['prefix' => 'admin'], function () {
   Route::post('memo/edit', 'Admin\MemoController@update');
   Route::get('memo/', 'Admin\MemoController@index');
   Route::post('memo/delete', 'Admin\MemoController@delete');
+
+  Route::get('subject/create', 'Admin\SubjectController@add');
+  Route::post('subject/create', 'Admin\SubjectController@create');
+  Route::get('subject/edit', 'Admin\SubjectController@edit');
+  Route::post('subject/edit', 'Admin\SubjectController@update');
+  Route::get('subject/', 'Admin\SubjectController@index');
+  Route::post('subject/delete', 'Admin\SubjectController@delete');
 });
 
 Auth::routes();
