@@ -12,6 +12,5 @@ class Subjects extends Model
     //
     public static $rules = array(
         'name' => 'required',
-        'name' => 'required',
     );
 }

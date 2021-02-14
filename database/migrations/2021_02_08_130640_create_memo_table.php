@@ -14,10 +14,10 @@ class CreateMemoTable extends Migration
      */
     public function up()
     {
-        Schema::create('memo', function (Blueprint $table) {
+        Schema::create('memos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('event');
-            $table->date('dated_at');
+            $table->date('tookplace_at');
             $table->string('body');
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateMemoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('memo');
+        Schema::dropIfExists('memos');
     }
 }

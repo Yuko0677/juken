@@ -20,19 +20,19 @@
         </ul>
         @endif
         <div class="form-group row">
-          <label class="col-md-2">日付</label>
+          <label class="col-md-2" for="date">日付</label>
           <div class="col-md-10">
-            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+            <input type="date" class="form-control" name="tookplace_at" tookplace_at="{{ old('date') }}">
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-md-2">項目</label>
+          <label class="col-md-2" for="event">項目</label>
           <div class="col-md-10">
-            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+            <input type="text" class="form-control" name="event" value="{{ old('event') }}">
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-md-2">本文</label>
+          <label class="col-md-2" for="body">内容</label>
           <div class="col-md-10">
             <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
           </div>
