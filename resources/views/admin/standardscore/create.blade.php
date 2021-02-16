@@ -20,21 +20,27 @@
         </ul>
         @endif
         <div class="form-group row">
-          <label class="col-md-2">タイトル</label>
+          <label class="col-md-2">テスト名</label>
           <div class="col-md-10">
-            <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+            <input type="text" class="form-control" name="test_name" value="{{ old('test_name') }}">
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-md-2">本文</label>
+          <label class="col-md-2" for="exam_at">日付</label>
           <div class="col-md-10">
-            <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
+            <input type="date" class="form-control" name="exam_at" value="{{ old('exam_at')}}">
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-md-2">画面</label>
+          <label class="col-md-2" for="subject">科目</label>
           <div class="col-md-10">
-            <input type="file" class="form-control-file" name="image">
+            <input type="text" class="form-control" name="subject" value="{{ old('subject') }}">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-2" for="score">偏差値</label>
+          <div class="col-md-10">
+            <input type="double" class="form-control-file" name="score">
           </div>
         </div>
         {{ csrf_field() }}

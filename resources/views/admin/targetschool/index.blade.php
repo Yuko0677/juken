@@ -43,7 +43,7 @@
             @if(isset($targetschools))
             @foreach($targetschools as $targetschool)
             <tr>
-              <td>{{ $targetschool->ranking }}</th>
+              <td>{{ $targetschool->ranking }}</td>
               <td>{{ $targetschool->name }}</td>
               <td>{{ $targetschool->standardscore }}</td>
               <td>{{ $targetschool->access }}</td>

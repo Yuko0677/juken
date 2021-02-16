@@ -14,13 +14,12 @@ class CreateStandardscoreTable extends Migration
      */
     public function up()
     {
-        Schema::create('standardscore', function (Blueprint $table) {
+        Schema::create('standardscores', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('ranking');
-            $table->string('name');
-            $table->string('standardscore');
-            $table->string('access')->nullable();
-            $table->string('point')->nullable();
+            $table->string('test_name');
+            $table->date('exam_at');
+            $table->string('subject');
+            $table->double('score', 3, 1);
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateStandardscoreTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('standardscore');
+        Schema::dropIfExists('standardscores');
     }
 }

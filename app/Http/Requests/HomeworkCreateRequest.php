@@ -24,7 +24,7 @@ class HomeworkCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'date' => 'required',
+            'limit_at' => 'required',
             'subject' => 'required',
             'body' => 'required'
         ];

@@ -13,7 +13,7 @@
     <div class="col-md-8">
       <form action="{{ action('Admin\StandardscoreController@index') }}" method="get">
         <div class="form-group row">
-          <label class="col-md-2">タイトル</label>
+          <label class="col-md-2">テスト名</label>
           <div class="col-md-8">
             <input type="text" class="form-control" name="cond_title" value="">
           </div>
@@ -26,31 +26,32 @@
     </div>
   </div>
   <div class="row">
-    <div class="admin-memo col-md-12 mx-auto">
+    <div class="list-standardscore col-md-12 mx-auto">
       <div class="row">
         <table class="table table-dark">
           <thead>
             <tr>
+              <th width="40%">テスト名</th>
               <th width="10%">日付</th>
-              <th width="20%">テスト種類</th>
-              <th width="25%">科目</th>
+              <th width="10%">科目</th>
               <th width="25%">偏差値</th>
               <th width="10%">操作</th>
             </tr>
           </thead>
           <tbody>
-            @if(isset($posts))
-            @foreach($posts as $memo)
+            @if(isset($standardscores))
+            @foreach($standardscores as $standardscore)
             <tr>
-              <th>{{ $memo->id }}</th>
-              <td>{{ \Str::limit($memo->title, 100) }}</td>
-              <td>{{ \Str::limit($memo->body, 250) }}</td>
+              <td>{{ $standardscore->test_name }}</td>
+              <td>{{ $standardscore->exam_at }}</td>
+              <td>{{ $standardscore->subject }}</td>
+              <td>{{ $standardscore->score }}</td>
               <td>
                 <div>
-                  <a href="{{ action('Admin\MemoController@edit', ['id' => $memo->id]) }}">編集</a>
+                  <a href="{{ action('Admin\StandardscoreController@edit', ['id' => $standardscore->id]) }}">編集</a>
                 </div>
                 <div>
-                  <a href="{{ action('Admin\MemoController@delete', ['id' => $memo->id]) }}">削除</a>
+                  <a href="{{ action('Admin\StandardscoreController@delete', ['id' => $standardscore->id]) }}">削除</a>
                 </div>
               </td>
             </tr>
