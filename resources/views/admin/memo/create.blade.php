@@ -22,7 +22,7 @@
         <div class="form-group row">
           <label class="col-md-2" for="date">日付</label>
           <div class="col-md-10">
-            <input type="date" class="form-control" name="tookplace_at" tookplace_at="{{ old('date') }}">
+            <input type="date" class="form-control" name="tookplace_at" value="{{ old('date') }}">
           </div>
         </div>
         <div class="form-group row">

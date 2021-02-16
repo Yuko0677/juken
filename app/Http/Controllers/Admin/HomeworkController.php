@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\HomeworkCreateRequest; //FormRequestを使用してValidate
 use App\Homework;
 
 class HomeworkController extends Controller
@@ -18,7 +19,7 @@ class HomeworkController extends Controller
     {
         return view('admin.homework.create');
     }
-    public function create(Request $request)
+    public function create(HomeworkCreateRequest $request) //Request -> HomeworkCreateRequest
     {
         Homework::create($request->all());
         return redirect('admin/homework/create');

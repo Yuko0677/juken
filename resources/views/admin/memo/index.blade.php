@@ -38,10 +38,11 @@
             </tr>
           </thead>
           <tbody>
-            @if(isset($posts))
-            @foreach($posts as $memo)
+            @if(isset($memos))
+            @foreach($memos as $memo)
             <tr>
               <td>{{ $memo->tookplace_at }}</td>
+              <td>{{ $memo->event }}</td>
               <td>{{ \Str::limit($memo->body, 250) }}</td>
               <td>
                 <div>

@@ -22,6 +22,12 @@
           </div>
         </div>
         <div class="form-group row">
+          <label class="col-md-2" for="event">項目</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" name="event" value="{{ $memo->event }}">
+          </div>
+        </div>
+        <div class="form-group row">
           <label class="col-md-2" for="body">内容</label>
           <div class="col-md-10">
             <textarea class="form-control" name="body" rows="20">{{ $memo->body }}</textarea>
