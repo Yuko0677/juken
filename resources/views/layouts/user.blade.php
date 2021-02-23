@@ -25,7 +25,28 @@
 
 <body>
   <div id="app">
-
+    <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url('/') }}">
+          {{ config('app.name', 'Laravel') }}
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Tobble navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Left Side Of Navbar -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a href="{{ route('homework') }}" class="nav-item nav-link">宿題</a></li>
+            <li class="nav-item"><a href="{{ route('memo') }}" class="nav-item nav-link">記録メモ</a></li>
+            <li class="nav-item"><a href="{{ route('standardscore') }}" class="nav-item nav-link">テスト偏差値</a></li>
+            <li class="nav-item"><a href="{{ route('targetschool') }}" class="nav-item nav-link">志望校</a></li>
+          </ul>
+          <!-- Right Side Of Navbar -->
+          <ul class="navbar-nav ml-auto">
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <main class="py-4">
       @yield('content')

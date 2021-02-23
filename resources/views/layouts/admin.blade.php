@@ -37,6 +37,7 @@
           <!-- Left Side Of Navbar -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a href="{{ route('admin.homework.index') }}" class="nav-item nav-link">宿題</a></li>
+            <li class="nav-item"><a href="{{ route('admin.subject.index') }}" class="nav-item nav-link">科目</a></li>
             <li class="nav-item"><a href="{{ route('admin.memo.index') }}" class="nav-item nav-link">記録メモ</a></li>
             <li class="nav-item"><a href="{{ route('admin.standardscore.index') }}" class="nav-item nav-link">テスト偏差値</a></li>
             <li class="nav-item"><a href="{{ route('admin.targetschool.index') }}" class="nav-item nav-link">志望校</a></li>

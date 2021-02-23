@@ -18,10 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'FrontController@front');
-Route::get('/homework', 'HomeworkController@index');
-Route::get('/standardscore', 'StandardscoreController@index');
-Route::get('/memo', 'MemoController@index');
-Route::get('/targetschool', 'TargetschoolController@index');
+Route::get('/homework', 'HomeworkController@index')->name('homework');
+Route::get('/standardscore', 'StandardscoreController@index')->name('standardscore');
+Route::get('/memo', 'MemoController@index')->name('memo');
+Route::get('/targetschool', 'TargetschoolController@index')->name('targetschool');
 Route::get('admin/', 'Admin\HomeController@home');
 
 Route::group([
@@ -81,11 +81,12 @@ Route::group([
   'namespace' => 'Admin',
   'as' => 'admin.subject.',
 ], function () {
+  Route::get('', 'SubjectController@index')->name('index');
   Route::get('create', 'SubjectController@add')->name('create');
   Route::post('create', 'SubjectController@create')->name('create');
   Route::get('edit', 'SubjectController@edit');
   Route::post('edit', 'SubjectController@update');
-  Route::get('', 'SubjectController@index')->name('index');
+
   Route::post('delete', 'SubjectController@delete');
 });
 

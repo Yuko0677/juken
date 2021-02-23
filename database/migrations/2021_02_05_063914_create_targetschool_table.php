@@ -18,7 +18,8 @@ class CreateTargetschoolTable extends Migration
             $table->bigIncrements('id');
             $table->string('ranking');
             $table->string('name');
-            $table->string('standardscore');
+            $table->string('url')->nullable();
+            $table->string('standardscore')->nullable();
             $table->string('access')->nullable();
             $table->string('point')->nullable();
             $table->timestamps();
