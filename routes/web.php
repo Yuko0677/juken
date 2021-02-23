@@ -29,9 +29,9 @@ Route::group([
   'namespace' => 'Admin',
   'as' => 'admin.homework.'
 ], function () {
-  Route::get('/', 'HomeworkController@index')->name('index');
-  Route::get('/create', 'HomeworkController@add')->name('create');
-  Route::post('/create', 'HomeworkController@create')->name('create');
+  Route::get('/', 'HomeworkController@index')->name('index')->middleware('auth');
+  Route::get('/create', 'HomeworkController@add')->name('create')->middleware('auth');
+  Route::post('/create', 'HomeworkController@create')->name('create')->middleware('auth');
   Route::get('/edit', 'HomeworkController@edit');
   Route::post('/edit', 'HomeworkController@update');
   Route::post('/delete', 'HomeworkController@delete');
