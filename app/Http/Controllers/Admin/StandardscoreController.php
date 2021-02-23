@@ -26,8 +26,8 @@ class StandardscoreController extends Controller
     }
     public function edit(Request $request)
     {
-        $standardscore = Standardscore::find($request->id);
-        $data = ['standardscore' => $standardscore];
+        $standardscores = Standardscore::find($request->id);
+        $data = ['standardscore' => $standardscores];
         return view('admin.standardscore.edit', $data);
     }
     public function update(Request $request)
