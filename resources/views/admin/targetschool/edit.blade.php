@@ -28,6 +28,12 @@
           </div>
         </div>
         <div class="form-group row">
+          <label class="col-md-2" for="url">URL</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" name="url" value="{{ old('url') }}">
+          </div>
+        </div>
+        <div class="form-group row">
           <label class="col-md-2" for="standardscore">偏差値</label>
           <div class="col-md-10">
             <input type="text" class="form-control" name="standardscore" value="{{ $targetschool->standardsore }}">
