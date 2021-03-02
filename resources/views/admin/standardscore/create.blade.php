@@ -34,13 +34,15 @@
         <div class="form-group row">
           <label class="col-md-2" for="subject">科目</label>
           <div class="col-md-10">
-            <input type="text" class="form-control" name="subject" value="{{ old('subject') }}">
+            {{ Form::select('subject_id', $subjects, null,
+              ['class' => 'form-control', 'id' => 'subject_id']
+            ) }}
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-2" for="score">偏差値</label>
           <div class="col-md-10">
-            <input type="double" class="form-control-file" name="score">
+            <input type="float" class="form-control-file" name="score">
           </div>
         </div>
         {{ csrf_field() }}

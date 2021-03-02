@@ -43,7 +43,7 @@
               <td>{{ $targetschool->name }}</td>
               <td>{{ $targetschool->standardscore }}</td>
               <td>{{ $targetschool->access }}</td>
-              <td>{{ \Str::limit($targetschool->point, 250) }}</td>
+              <td>{!! nl2br($targetschool->point) !!}</td>
             </tr>
             @endforeach
             @endif

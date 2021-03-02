@@ -28,7 +28,7 @@
   <div class="row">
     <div class="list-targetschool col-md-12 mx-auto">
       <div class="row">
-        <table class="table table-dark">
+        <table class="table">
           <thead>
             <tr>
               <th width="10%">志望順位</th>
@@ -44,10 +44,12 @@
             @foreach($targetschools as $targetschool)
             <tr>
               <td>{{ $targetschool->ranking }}</td>
-              <td>{{ $targetschool->name }}</td>
+              <td>
+                <a href="{{ $targetschool->url }}" target="_blank">{{ $targetschool->name }}</a>
+              </td>
               <td>{{ $targetschool->standardscore }}</td>
               <td>{{ $targetschool->access }}</td>
-              <td>{{ \Str::limit($targetschool->point, 250) }}</td>
+              <td>{!! nl2br($targetschool->point) !!}</td>
               <td>
                 <div>
                   <a href="{{ action('Admin\TargetSchoolController@edit', ['id' => $targetschool->id]) }}">編集</a>

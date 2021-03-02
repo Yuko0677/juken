@@ -20,12 +20,12 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+  <!-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> -->
 </head>
 
 <body>
   <div id="app">
-    <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+    <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
       <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
           {{ config('app.name', 'Laravel') }}

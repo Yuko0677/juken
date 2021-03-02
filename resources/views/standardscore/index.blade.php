@@ -41,8 +41,8 @@
             <tr>
               <td>{{ $standardscore->test_name }}</td>
               <td>{{ $standardscore->exam_at }}</td>
-              <td>{{ $standardscore->subject }}</td>
-              <td>{{ $standardscore->score }}</td>
+              <td>{{ $standardscore->subject->name }}</td>
+              <td>{!! nl2br($standardscore->score) !!}</td>
             </tr>
             @endforeach
             @endif

@@ -28,7 +28,7 @@
   <div class="row">
     <div class="list-memo col-md-12 mx-auto">
       <div class="row">
-        <table class="table table-dark">
+        <table class="table">
           <thead>
             <tr>
               <th width="10%">日付</th>
@@ -43,7 +43,7 @@
             <tr>
               <td>{{ $memo->tookplace_at }}</td>
               <td>{{ $memo->event }}</td>
-              <td>{{ \Str::limit($memo->body, 250) }}</td>
+              <td>{!! nl2br($memo->body) !!}</td>
               <td>
                 <div>
                   <a href="{{ action('Admin\MemoController@edit', ['id' => $memo->id]) }}">編集</a>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\HomeworkCreateRequest; //FormRequestを使用してValidate
 use App\Homework;
+use App\Subjects;
 
 class HomeworkController extends Controller
 {
@@ -17,7 +18,9 @@ class HomeworkController extends Controller
     }
     public function add()
     {
-        return view('admin.homework.create');
+        $subjects = Subjects::get()->pluck('name', 'id');
+        $data = ['subjects' => $subjects];
+        return view('admin.homework.create', $data);
     }
     public function create(HomeworkCreateRequest $request) //Request -> HomeworkCreateRequest
     {

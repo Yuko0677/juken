@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use App\Homework;
+use App\Subjects;
 
 class HomeworkController extends Controller
 {

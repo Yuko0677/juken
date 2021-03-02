@@ -28,7 +28,7 @@
   <div class="row">
     <div class="list-standardscore col-md-12 mx-auto">
       <div class="row">
-        <table class="table table-dark">
+        <table class="table">
           <thead>
             <tr>
               <th width="40%">テスト名</th>
@@ -44,8 +44,8 @@
             <tr>
               <td>{{ $standardscore->test_name }}</td>
               <td>{{ $standardscore->exam_at }}</td>
-              <td>{{ $standardscore->subject }}</td>
-              <td>{{ $standardscore->score }}</td>
+              <td>{{ $standardscore->subject->name }}</td>
+              <td>{{ $standardscore->score) }}</td>
               <td>
                 <div>
                   <a href="{{ action('Admin\StandardscoreController@edit', ['id' => $standardscore->id]) }}">編集</a>

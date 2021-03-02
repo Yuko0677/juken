@@ -28,7 +28,7 @@
   <div class="row">
     <div class="list-homework col-md-12 mx-auto">
       <div class="row">
-        <table class="table table-dark">
+        <table class="table">
           <thead>
             <tr>
               <th width="10%">日付</th>
@@ -42,8 +42,8 @@
             @foreach($homeworks as $homework)
             <tr>
               <td>{{ $homework->limit_at }}</td>
-              <td>{{ $homework->subject }}</td>
-              <td>{{ \Str::limit($homework->body, 250) }}</td>
+              <td>{{ $homework->subject->name }}</td>
+              <td>{!! nl2br($homework->body) !!}</td>
               <td>
                 <div>
                   <a href="{{ action('Admin\HomeworkController@edit', ['id' => $homework->id]) }}">編集</a>

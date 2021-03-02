@@ -22,13 +22,15 @@
         <div class="form-group row">
           <label class="col-md-2" for="limit_at">日付</label>
           <div class="col-md-10">
-            <input type="date" class="form-control" name="limit_at" value="{{ old('limite_at')}}">
+            <input type="date" class="form-control" name="limit_at" value="{{ old('limit_at')}}">
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-2" for="subject">科目</label>
           <div class="col-md-10">
-            <input type="text" class="form-control" name="subject" value="{{ old('subject') }}">
+            {{ Form::select('subject_id', $subjects, null,
+              ['class' => 'form-control', 'id' => 'subject_id']
+            ) }}
           </div>
         </div>
         <div class="form-group row">

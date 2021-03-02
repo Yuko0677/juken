@@ -9,7 +9,6 @@ class Subjects extends Model
     protected $table = 'subjects';
     protected $guarded = array('id');
 
-    //
     public static $rules = array(
         'name' => 'required',
     );

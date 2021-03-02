@@ -78,7 +78,6 @@ Route::group([
 
 Route::group([
   'prefix' => 'admin/subject',
-  'namespace' => 'Admin',
   'as' => 'admin.subject.',
 ], function () {
   Route::get('', 'SubjectController@index')->name('index');
@@ -86,7 +85,6 @@ Route::group([
   Route::post('create', 'SubjectController@create')->name('create');
   Route::get('edit', 'SubjectController@edit');
   Route::post('edit', 'SubjectController@update');
-
   Route::post('delete', 'SubjectController@delete');
 });
 

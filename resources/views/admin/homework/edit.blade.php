@@ -24,7 +24,9 @@
         <div class="form-group row">
           <label class="col-md-2" for="subject">科目</label>
           <div class="col-md-10">
-            <input type="text" class="form-control" name="subject" value="{{ $homework->subject }}">
+            // {{ Form::select('subject_id', $subjects, null,
+//              ['class' => 'form-control', 'id' => 'subject_id']
+//            ) }}
           </div>
         </div>
         <div class="form-group row">

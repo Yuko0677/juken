@@ -13,5 +13,10 @@ class Standardscore extends Model
     public static $rules = array(
         'exam_at' => 'required',
         'score' => 'required',
-    );   //
+    );
+    //relation
+    public function subject()
+    {
+        return $this->belongsTo('App\Subjects');
+    }
 }

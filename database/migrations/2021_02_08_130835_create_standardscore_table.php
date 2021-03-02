@@ -18,8 +18,9 @@ class CreateStandardscoreTable extends Migration
             $table->bigIncrements('id');
             $table->string('test_name');
             $table->date('exam_at');
-            $table->string('subject');
-            $table->double('score', 3, 1);
+            $table->foreignId('subject_id');
+            //$table->string('subject');
+            $table->float('score');
             $table->timestamps();
         });
     }

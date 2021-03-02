@@ -40,7 +40,7 @@
             <tr>
               <td>{{ $memo->tookplace_at }}</td>
               <td>{{ $memo->event }}</td>
-              <td>{{ \Str::limit($memo->body, 250) }}</td>
+              <td>{!! nl2br($memo->body) !!}</td>
             </tr>
             @endforeach
             @endif

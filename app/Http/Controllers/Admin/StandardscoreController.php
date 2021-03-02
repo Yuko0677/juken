@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Standardscore;
+use App\Subjects;
 use phpDocumentor\Reflection\DocBlock\StandardTagFactory;
 
 class StandardscoreController extends Controller
@@ -17,7 +18,9 @@ class StandardscoreController extends Controller
     }
     public function add()
     {
-        return view('admin.standardscore.create');
+        $subjects = Subjects::get()->pluck('name', 'id');
+        $data = ['subjects' => $subjects];
+        return view('admin.standardscore.create', $data);
     }
     public function create(Request $request)
     {

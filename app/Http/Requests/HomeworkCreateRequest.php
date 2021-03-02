@@ -25,13 +25,14 @@ class HomeworkCreateRequest extends FormRequest
     {
         return [
             'limit_at' => 'required',
-            'subject' => 'required',
+            'subject_id' => 'required',
             'body' => 'required'
         ];
     }
+
     //バリデーション項目名定義一部
     public function attributes()
     {
-        return ['subject' => '科目'];
+        return ['subject_id' => '科目'];
     }
 }

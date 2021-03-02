@@ -14,8 +14,10 @@ class Homework extends Model
         'date' => 'required',
         'body' => 'required',
     );
-    public function homework()
+
+    //relation
+    public function subject()
     {
-        return $this->belongsTo('App\Subject');
+        return $this->belongsTo('App\Subjects');
     }
 }
