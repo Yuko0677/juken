@@ -18,5 +18,6 @@ class Standardscore extends Model
     public function subject()
     {
         return $this->belongsTo('App\Subjects');
+        return $this->belongsTo('App\Exams');
     }
 }

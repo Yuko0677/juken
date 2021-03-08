@@ -24,15 +24,15 @@
         <div class="form-group row">
           <label class="col-md-2" for="subject">科目</label>
           <div class="col-md-10">
-            // {{ Form::select('subject_id', $subjects, null,
-//              ['class' => 'form-control', 'id' => 'subject_id']
-//            ) }}
+            {{ Form::select('subject_id', $subjects, $homework->subject_id,
+              ['class' => 'form-control', 'id' => 'subject_id']
+            ) }}
           </div>
         </div>
-        <div class="form-group row">
+        <div class=" form-group row">
           <label class="col-md-2" for="body">内容</label>
           <div class="col-md-10">
-            <textarea class="form-control" name="body" rows="20">{{ $homework->body }}</textarea>
+            <textarea class="form-control" name="body" rows="20">"{{ $homework->body }}"</textarea>
           </div>
         </div>
         <div class="form-group row">

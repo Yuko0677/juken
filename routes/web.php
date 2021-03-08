@@ -77,7 +77,21 @@ Route::group([
 });
 
 Route::group([
+  'prefix' => 'admin/exam',
+  'namespace' => 'Admin',
+  'as' => 'admin.exam.',
+], function () {
+  Route::get('', 'ExamController@index')->name('index');
+  Route::get('create', 'ExamController@add')->name('create');
+  Route::post('create', 'ExamController@create')->name('create');
+  Route::get('edit', 'ExamController@edit');
+  Route::post('edit', 'ExamController@update');
+  Route::post('delete', 'ExamController@delete');
+});
+
+Route::group([
   'prefix' => 'admin/subject',
+  'namespace' => 'Admin',
   'as' => 'admin.subject.',
 ], function () {
   Route::get('', 'SubjectController@index')->name('index');

@@ -3,9 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Admin\Standardscore;
+use Admin\Exams;
 
-class CreateStandardscoreTable extends Migration
+class CreateExamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,14 +14,10 @@ class CreateStandardscoreTable extends Migration
      */
     public function up()
     {
-        Schema::create('standardscores', function (Blueprint $table) {
+        Schema::create('exams', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('exam_id');
-            //$table->string('test_name');
-            //$table->date('exam_at');
-            $table->foreignId('subject_id');
-            //$table->string('subject');
-            $table->float('score');
+            $table->string('name');
+            $table->date('dated_at');
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ class CreateStandardscoreTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('standardscores');
+        Schema::dropIfExists('exams');
     }
 }

@@ -29,8 +29,12 @@ class HomeworkController extends Controller
     }
     public function edit(Request $request)
     {
-        $homework = Homework::find($request->id);
-        $data = ['homework' => $homework];
+        $subjects = Subjects::get()->pluck('name', 'id');
+        $homeworks = Homework::find($request->id);
+        $data = [
+            'homework' => $homeworks,
+            'subjects' => $subjects,
+        ];
         return view('admin.homework.edit', $data);
     }
     public function update(Request $request)

@@ -22,7 +22,9 @@
         <div class="form-group row">
           <label class="col-md-2">テスト名</label>
           <div class="col-md-10">
-            <input type="text" class="form-control" name="test_name" value="{{ old('test_name') }}">
+            <input type="text" class="form-control" name="exam" <!-- {{ Form::select('exam_id', $exams, null,
+              ['class' => 'form-control', 'id' => 'exam_id']
+            ) }} -->
           </div>
         </div>
         <div class="form-group row">

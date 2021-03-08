@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Standardscore;
 use App\Subjects;
+use App\Exams;
+
 use phpDocumentor\Reflection\DocBlock\StandardTagFactory;
 
 class StandardscoreController extends Controller
@@ -19,7 +21,14 @@ class StandardscoreController extends Controller
     public function add()
     {
         $subjects = Subjects::get()->pluck('name', 'id');
-        $data = ['subjects' => $subjects];
+        $exams = Exams::get()->pluck('name', 'dated_at', 'id')
+        $data = [
+            'subjects' => $subjects,
+            'exams' => $exams,
+        ];
+        // $items = \App\Item::select('id', 'name', 'created_at')->get();
+        // $exams = Exams::get()->pluck('name', 'id');
+        // $data = ['exams' => $exams];
         return view('admin.standardscore.create', $data);
     }
     public function create(Request $request)
@@ -29,8 +38,13 @@ class StandardscoreController extends Controller
     }
     public function edit(Request $request)
     {
+        $subjects = Subjects::get()->pluck('name', 'id');
         $standardscores = Standardscore::find($request->id);
-        $data = ['standardscore' => $standardscores];
+        $data = [
+            'standardscore' => $standardscores,
+            'subjects' => $subjects,
+            // 'dated_at' => $dated_at,
+        ];
         return view('admin.standardscore.edit', $data);
     }
     public function update(Request $request)

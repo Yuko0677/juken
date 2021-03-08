@@ -1,10 +1,10 @@
-@extends('layouts.home')
+@extends('layouts.user')
 {{--home.blade.phpの@yield('title')に'明日香受験プロジェクト'を埋め込む --}}
 @section('title', '明日香受験プロジェクト')
 @section('content')
 <div class="container">
   <div class="header">
-    <H1>Road to Junior High</H1>
+    <h1 class="p-2 text-info">Road to Junior High</h1>
   </div>
 
 

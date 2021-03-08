@@ -45,7 +45,7 @@
               <td>{{ $standardscore->test_name }}</td>
               <td>{{ $standardscore->exam_at }}</td>
               <td>{{ $standardscore->subject->name }}</td>
-              <td>{{ $standardscore->score) }}</td>
+              <td>{{ number_format($standardscore->score, 1) }}</td>
               <td>
                 <div>
                   <a href="{{ action('Admin\StandardscoreController@edit', ['id' => $standardscore->id]) }}">編集</a>
