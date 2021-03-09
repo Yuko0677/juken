@@ -20,24 +20,26 @@
         </ul>
         @endif
         <div class="form-group row">
-          <label class="col-md-2">テスト名</label>
+          <label class="col-md-2" for="exams">テスト名</label>
           <div class="col-md-10">
-            <input type="text" class="form-control" name="exam" <!-- {{ Form::select('exam_id', $exams, null,
+            {{ Form::select('exam_id', $exam_name, null,
               ['class' => 'form-control', 'id' => 'exam_id']
-            ) }} -->
+            ) }}
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-md-2" for="exam_at">日付</label>
+          <label class="col-md-2" for="exam_date">実施日</label>
           <div class="col-md-10">
-            <input type="date" class="form-control" name="exam_at" value="{{ old('exam_at')}}">
+            {{ Form::select('exam_id', $exam_date, null,
+            ['class' => 'form-control', 'id' => 'exam_id']
+            ) }}
           </div>
         </div>
         <div class="form-group row">
           <label class="col-md-2" for="subject">科目</label>
           <div class="col-md-10">
             {{ Form::select('subject_id', $subjects, null,
-              ['class' => 'form-control', 'id' => 'subject_id']
+            ['class' => 'form-control', 'id' => 'subject_id']
             ) }}
           </div>
         </div>

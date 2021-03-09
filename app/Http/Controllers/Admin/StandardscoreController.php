@@ -21,14 +21,15 @@ class StandardscoreController extends Controller
     public function add()
     {
         $subjects = Subjects::get()->pluck('name', 'id');
-        $exams = Exams::get()->pluck('name', 'dated_at', 'id')
-        $data = [
-            'subjects' => $subjects,
-            'exams' => $exams,
-        ];
-        // $items = \App\Item::select('id', 'name', 'created_at')->get();
-        // $exams = Exams::get()->pluck('name', 'id');
-        // $data = ['exams' => $exams];
+        $data = ['subjects' => $subjects];
+
+        $exams = Exams::get()->pluck('name', 'id');
+        $data = ['exam_name' => $exams];
+
+
+        $exams = Exams::get()->pluck('dated_at', 'id');
+        $data = ['exam_at' => $exams];
+
         return view('admin.standardscore.create', $data);
     }
     public function create(Request $request)
@@ -39,9 +40,12 @@ class StandardscoreController extends Controller
     public function edit(Request $request)
     {
         $subjects = Subjects::get()->pluck('name', 'id');
+        $exams = Exams::get()->pluck('name', 'id');
         $standardscores = Standardscore::find($request->id);
         $data = [
             'standardscore' => $standardscores,
+            'exam_name' => $exams,
+            'exam_date' => $exams,
             'subjects' => $subjects,
             // 'dated_at' => $dated_at,
         ];

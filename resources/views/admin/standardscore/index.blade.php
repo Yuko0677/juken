@@ -42,8 +42,8 @@
             @if(isset($standardscores))
             @foreach($standardscores as $standardscore)
             <tr>
-              <td>{{ $standardscore->test_name }}</td>
-              <td>{{ $standardscore->exam_at }}</td>
+              <td>{{ $standardscore->exam_name }}</td>
+              <td>{{ $standardscore->exam_dated_at }}</td>
               <td>{{ $standardscore->subject->name }}</td>
               <td>{{ number_format($standardscore->score, 1) }}</td>
               <td>
