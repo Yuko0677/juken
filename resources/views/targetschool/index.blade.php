@@ -25,7 +25,7 @@
   <div class="row">
     <div class="list-targetschool col-md-12 mx-auto">
       <div class="row">
-        <table class="table table-dark">
+        <table class="table">
           <thead>
             <tr>
               <th width="10%">志望順位</th>
