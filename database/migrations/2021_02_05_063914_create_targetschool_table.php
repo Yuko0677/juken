@@ -16,7 +16,7 @@ class CreateTargetschoolTable extends Migration
     {
         Schema::create('targetschools', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('ranking');
+            $table->integer('ranking');
             $table->string('name');
             $table->string('url')->nullable();
             $table->string('standardscore')->nullable();

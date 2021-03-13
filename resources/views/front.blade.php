@@ -7,13 +7,6 @@
     <h1 class="p-2 text-info">Road to Junior High</h1>
   </div>
 
-
-  <body>
-
-    <h2>受験日まであと{{ $diff_days }}日</h2>
-  </body>
-
-  </html>
-  <?php
-  echo date('Y/m/d');
-  ?>
+  <h2>受験日まであと<span class="text-danger">{{ $diff_days }}日</span></h2>
+</div>
+@endsection

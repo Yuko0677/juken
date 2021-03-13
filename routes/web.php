@@ -27,14 +27,15 @@ Route::get('admin/', 'Admin\HomeController@home');
 Route::group([
   'prefix' => 'admin/homework',
   'namespace' => 'Admin',
-  'as' => 'admin.homework.'
+  'as' => 'admin.homework.',
+  'middleware' => 'auth',
 ], function () {
-  Route::get('/', 'HomeworkController@index')->name('index')->middleware('auth');
-  Route::get('/create', 'HomeworkController@add')->name('create')->middleware('auth');
-  Route::post('/create', 'HomeworkController@create')->name('create')->middleware('auth');
+  Route::get('/', 'HomeworkController@index')->name('index');
+  Route::get('/create', 'HomeworkController@add')->name('create');
+  Route::post('/create', 'HomeworkController@create')->name('create');
   Route::get('/edit', 'HomeworkController@edit');
   Route::post('/edit', 'HomeworkController@update');
-  Route::post('/delete', 'HomeworkController@delete');
+  Route::get('/delete', 'HomeworkController@delete');
 });
 
 Route::group([
@@ -47,7 +48,7 @@ Route::group([
   Route::post('create', 'MemoController@create')->name('create');
   Route::get('edit', 'MemoController@edit');
   Route::post('edit', 'MemoController@update');
-  Route::post('delete', 'MemoController@delete');
+  Route::get('delete', 'MemoController@delete');
 });
 
 Route::group([
@@ -60,7 +61,7 @@ Route::group([
   Route::post('create', 'TargetSchoolController@create')->name('create');
   Route::get('edit', 'TargetSchoolController@edit');
   Route::post('edit', 'TargetSchoolController@update');
-  Route::post('delete', 'TargetSchoolController@delete');
+  Route::get('delete', 'TargetSchoolController@delete');
 });
 
 Route::group([
@@ -68,12 +69,13 @@ Route::group([
   'namespace' => 'Admin',
   'as' => 'admin.standardscore.',
 ], function () {
-  Route::get('', 'StandardscoreController@index')->name('index');
-  Route::get('create', 'StandardscoreController@add')->name('create');
-  Route::post('create', 'StandardscoreController@create')->name('create');
-  Route::get('edit', 'StandardscoreController@edit');
-  Route::post('edit', 'StandardscoreController@update');
-  Route::post('delete', 'StandardscoreController@delete');
+  Route::get('/{exam_id}', 'StandardscoreController@index')->name('index');
+  Route::get('/{exam_id}/create', 'StandardscoreController@add')->name('create');
+  Route::post('/{exam_id}/create', 'StandardscoreController@create')->name('create');
+  Route::get('/{exam_id}/edit', 'StandardscoreController@edit');
+  Route::post('/{exam_id}/edit', 'StandardscoreController@update');
+  //Route::post('/{exam_id}/delete', 'StandardscoreController@delete');
+  Route::get('/{exam_id}/delete', 'StandardscoreController@delete');
 });
 
 Route::group([
@@ -86,7 +88,7 @@ Route::group([
   Route::post('create', 'ExamController@create')->name('create');
   Route::get('edit', 'ExamController@edit');
   Route::post('edit', 'ExamController@update');
-  Route::post('delete', 'ExamController@delete');
+  Route::get('delete', 'ExamController@delete');
 });
 
 Route::group([
@@ -99,7 +101,7 @@ Route::group([
   Route::post('create', 'SubjectController@create')->name('create');
   Route::get('edit', 'SubjectController@edit');
   Route::post('edit', 'SubjectController@update');
-  Route::post('delete', 'SubjectController@delete');
+  Route::get('delete', 'SubjectController@delete');
 });
 
 //, 'middleware' => 'auth'

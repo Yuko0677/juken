@@ -10,7 +10,7 @@ class TargetSchoolController extends Controller
 {
     public function index(Request $request)
     {
-        $targetschools = TargetSchool::get();
+        $targetschools = TargetSchool::get()->sortByDesc('ranking');
         $data = ['targetschools' => $targetschools];
         return view('targetschool.index', $data);
     }      //

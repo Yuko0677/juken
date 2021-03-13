@@ -40,7 +40,9 @@
             @foreach($targetschools as $targetschool)
             <tr>
               <td>{{ $targetschool->ranking }}</td>
-              <td>{{ $targetschool->name }}</td>
+              <td>
+                <a href="{{ $targetschool->url }}" target="_blank">{{ $targetschool->name }}</a>
+              </td>
               <td>{{ $targetschool->standardscore }}</td>
               <td>{{ $targetschool->access }}</td>
               <td>{!! nl2br($targetschool->point) !!}</td>

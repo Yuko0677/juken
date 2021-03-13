@@ -11,6 +11,7 @@
       <a href="{{ action('Admin\ExamController@add') }}" role="button" class="btn btn-primary"> 新規作成</a>
     </div>
     <div class="col-md-8">
+
       <form action="{{ action('Admin\ExamController@index') }}" method="get">
         <div class="form-group row">
           <label class="col-md-2">科目</label>
@@ -40,7 +41,11 @@
             @if(isset($exams))
             @foreach($exams as $exam)
             <tr>
-              <td>{{ $exam->name }}</td>
+              <td>
+                <a href="{{ action('Admin\StandardscoreController@index', ['exam_id' => $exam->id]) }}">
+                  {{ $exam->name }}
+                </a>
+              </td>
               <td>{{ $exam->dated_at }}</td>
               <td>
                 <div>
