@@ -9,6 +9,22 @@ class Standardscore extends Model
     protected $table = 'standardscores';
     protected $guarded = array('id');
 
+    public static function calculate()
+    {
+        $values = [];
+        $srandardscores = Standardscore::get();
+        foreach ($srandardscores as $srandardscore) {
+            $values[$srandardscore->subject->name][] = $srandardscore->score;
+        }
+        return $values;
+    }
+
+    public static function calculateByExam($exam)
+    {
+        $values = Standardscore::where('exam_id', $exam->id)->get()->pluck('score');
+        return $values;
+    }
+
     //
     public static $rules = array(
         'score' => 'required',

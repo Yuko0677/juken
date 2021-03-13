@@ -11,7 +11,7 @@ class ExamController extends Controller
 {
     public function index(Request $request)
     {
-        $exams = Exams::get();
+        $exams = Exams::orderBy('dated_at', 'asc')->get();
         $data = ['exams' => $exams];
         return view('admin.exam.index', $data);
     }

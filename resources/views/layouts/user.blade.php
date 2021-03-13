@@ -12,11 +12,12 @@
 
   <title>@yield('title')</title>
 
-  <script src="{{ secure_asset('js/app.js') }}" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 
   <!-- Fonts -->
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet type=" text/css">
+
 
   <!-- Styles -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -38,7 +39,7 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item"><a href="{{ route('homework') }}" class="nav-item nav-link">宿題</a></li>
             <li class="nav-item"><a href="{{ route('memo') }}" class="nav-item nav-link">記録メモ</a></li>
-            <li class="nav-item"><a href="{{ route('standardscore') }}" class="nav-item nav-link">テスト偏差値</a></li>
+            <li class="nav-item"><a href="{{ route('exam') }}" class="nav-item nav-link">テスト</a></li>
             <li class="nav-item"><a href="{{ route('targetschool') }}" class="nav-item nav-link">志望校</a></li>
           </ul>
           <!-- Right Side Of Navbar -->

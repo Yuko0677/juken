@@ -36,7 +36,7 @@ class StandardscoreController extends Controller
     public function create($exam_id, Request $request)
     {
         Standardscore::create($request->all());
-        return redirect('admin/standardscore/', ['exam_id' => $exam_id]);
+        return redirect()->route('admin.standardscore.index', ['exam_id' => $exam_id]);
     }
 
     public function edit($exam_id, Request $request)
@@ -58,12 +58,12 @@ class StandardscoreController extends Controller
     public function update($exam_id, Request $request)
     {
         Standardscore::find($request->id)->update($request->all());
-        return redirect('admin/standardscore', ['exam_id' => $exam_id]);
+        return redirect()->route('admin.standardscore.index', ['exam_id' => $exam_id]);
     }
     public function delete($exam_id, Request $request)
     {
         $standardscore = Standardscore::find($request->id);
         $standardscore->delete();
-        return redirect('admin/standardscore/', ['exam_id' => $exam_id]);
-    } //
+        return redirect()->route('admin.standardscore.index', ['exam_id' => $exam_id]);
+    }
 }

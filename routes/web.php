@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::get('/', 'FrontController@front');
 Route::get('/homework', 'HomeworkController@index')->name('homework');
+Route::get('/exam', 'ExamController@index')->name('exam');
 Route::get('/standardscore', 'StandardscoreController@index')->name('standardscore');
 Route::get('/memo', 'MemoController@index')->name('memo');
 Route::get('/targetschool', 'TargetschoolController@index')->name('targetschool');
